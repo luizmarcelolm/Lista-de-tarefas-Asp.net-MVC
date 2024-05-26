@@ -1,0 +1,36 @@
+﻿@model Tarefa
+
+<h2>Nova Tarefa</h2>
+
+<form asp-action="Filtrar" asp-controller="Home" method="post">
+
+	<div class="mb-3">
+		<label class="form-label">Categoria:</label>
+		<select name="filtro"
+	class="form-select"
+				asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome", ViewBag.Filtros.CategoriaId))">
+			<option value="todos">Todos</option>
+		</select>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Data de vencimento:</label>
+		<select name="filtro"
+	class="form-select"
+				asp-items="@(new SelectList(ViewBag.VencimentoValores, "Key", "Value", ViewBag.Filtros.Vencimento))">
+			<option value="todos">Todos</option>
+		</select>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Situação:</label>
+		<select name="filtro"
+	class="form-select"
+				asp-items="@(new SelectList(ViewBag.Status, "StatusId", "Nome", ViewBag.Filtros.StatusId))">
+			<option value="todos">Todos</option>
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Filtrar</button>
+	<a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
+</form>

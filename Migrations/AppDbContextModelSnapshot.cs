@@ -101,7 +101,7 @@ namespace Lista_de_tarefas.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("DataDeVenciamento")
+                    b.Property<DateTime?>("DataDeVencimento")
                         .IsRequired()
                         .HasColumnType("datetime2");
 

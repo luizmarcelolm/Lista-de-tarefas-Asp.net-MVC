@@ -44,24 +44,56 @@ namespace Lista_de_tarefas.Controllers
 
                 if (filtros.EPassado)
                 {
-                    consulta = consulta.Where(t => t.DataDeVenciamento < hoje);
+                    consulta = consulta.Where(t => t.DataDeVencimento < hoje);
                 }
 
                 if (filtros.EFuturo)
                 {
-                    consulta = consulta.Where(t => t.DataDeVenciamento > hoje);
+                    consulta = consulta.Where(t => t.DataDeVencimento > hoje);
                 }
 
                 if (filtros.EHoje)
                 {
-                    consulta = consulta.Where(t => t.DataDeVenciamento == hoje);
+                    consulta = consulta.Where(t => t.DataDeVencimento == hoje);
                 }
             }
 
-            var tarefas = consulta.OrderBy(t => t.DataDeVenciamento).ToList();
+            var tarefas = consulta.OrderBy(t => t.DataDeVencimento).ToList();
 
             return View(tarefas);
         }
+
+        public IActionResult Adicionar()
+        {
+            ViewBag.Categoria = _context.Categorias.ToList();
+			ViewBag.Status = _context.Statuses.ToList();
+
+            var tarefa = new Tarefa { StatusId = "aberto" };
+
+            return View(tarefa);
+		}
+
+        [HttpPost]
+        public IActionResult Filtrar(string[] filtro)
+        {
+            string id = string.Join("-", filtro);
+            return RedirectToAction("Index", new {ID = id});
+        }
+
+        [HttpPost]
+        public IActionResult MarcarCompleto([FromRoute] string id, Tarefa tarefaSelecionada) {
+            tarefaSelecionada = _context.tarefas.Find(tarefaSelecionada.Id);
+
+            if(tarefaSelecionada != null)
+            {
+                tarefaSelecionada.StatusId = "completo";
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index", new { ID = id});
+        }
+
+
+
 
        
     }

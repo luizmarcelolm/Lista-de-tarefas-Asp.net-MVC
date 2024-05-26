@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lista_de_tarefas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240526145707_CriandoBanco")]
+    [Migration("20240526211615_CriandoBanco")]
     partial class CriandoBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,7 +103,7 @@ namespace Lista_de_tarefas.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("DataDeVenciamento")
+                    b.Property<DateTime?>("DataDeVencimento")
                         .IsRequired()
                         .HasColumnType("datetime2");
 

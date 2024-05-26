@@ -40,7 +40,7 @@ namespace Lista_de_tarefas.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataDeVenciamento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataDeVencimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CategoriaId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     StatusId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
