@@ -10,5 +10,11 @@
 * BOOTSTRAP
 * GITHUB
 -------------------------------------------
-* assim 
+* As atividades ficam com status amarelo automaticamente quando elas estão vencidas.
+* Ficam verde quando estão completas.
+* Sem cor quando estão aguardando ser concluídas.
 # ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/e3e4bdfe-31ac-4941-8224-d3b974b1b4d8)
+
+* Nesse trecho de código foi feita uma verificação e alterado a cor na classe conforme seu status.
+# ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/efa12ade-252e-4ac6-9de4-648f33272c1e)
+
