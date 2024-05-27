@@ -53,22 +53,38 @@
 
 					<tbody>
 					@foreach (Tarefa tarefa in Model){
-						string atrasado = tarefa.Atrasado ? "bg-warning" : "";
+						string atrasado =  "";
+
+						if(tarefa.Atrasado == true)
+						{
+							 atrasado = "bg-warning";
+						}
+						if (tarefa.Atrasado == false &&  tarefa.StatusId == "aberto")
+						{
+							 atrasado = "";
+						}
+						if (tarefa.Atrasado == false && tarefa.StatusId == "completo")
+						{
+							 atrasado = "bg-success";
+						}
+
+
 						<tr>
-							<td class="@atrasado">@tarefa.Descricao</td>
-							<td class="@atrasado">@tarefa.Categoria.Nome</td>
-							<td class="@atrasado">@tarefa.DataDeVencimento?.ToShortDateString()</td>
+							<td>@tarefa.Descricao</td>
+							<td>@tarefa.Categoria.Nome</td>
+							<td>@tarefa.DataDeVencimento?.ToShortDateString()</td>
 							<td class="@atrasado">@tarefa.Status.Nome</td>
 							<td>
 								@if(tarefa.StatusId == "aberto")
 								{
-									<button type="submit" class="btn btn-primary btn-sm"
-									    name="@nameof(Tarefa.Id)"
-									    value="@tarefa.Id"
-									>
-										Completar
+										<button type="submit" class="btn btn-primary btn-sm"
+										name="@nameof(Tarefa.Id)"
+										value="@tarefa.Id"
+										>
+											Completar
 									</button>
 								}
+							
 							</td>
 						</tr>
 					}

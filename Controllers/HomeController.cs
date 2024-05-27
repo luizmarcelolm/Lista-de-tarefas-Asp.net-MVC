@@ -19,7 +19,7 @@ namespace Lista_de_tarefas.Controllers
             var filtros = new Filtros(id);
 
             ViewBag.Filtros = filtros;
-            ViewBag.Categorias = _context.Categorias.ToList();
+			ViewBag.Categorias = _context.Categorias.ToList();
             ViewBag.Status = _context.Statuses.ToList();
             ViewBag.VencimentoValores = Filtros.VencimentoValoresFiltro;
 
@@ -105,7 +105,7 @@ namespace Lista_de_tarefas.Controllers
             {
                 tarefaSelecionada.StatusId = "completo";
                 _context.SaveChanges();
-            }
+			}
             return RedirectToAction("Index", new { ID = id});
         }
 
