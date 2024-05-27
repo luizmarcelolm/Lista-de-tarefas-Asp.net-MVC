@@ -4,6 +4,7 @@
 
 * Para a criação do projeto foi utilizado:
 * ASP.NET MVC
+* C#
 * BANCO DE DADOS SQL SERVER
 * JQUERY PARA VALIDAÇÃO DOS CAMPOS
 * BOOTSTRAP
