@@ -1,4 +1,4 @@
-# Aplicação para armazenar uma lista de tarefaz de forma prática
+# Aplicação para armazenar uma lista de atividades de forma prática
 
 # Esse projeto foi criado com asp.net mvc c#, com o objetivo de mostrar o desenvolvimento de um CRUD para o armazenamento de informações no banco de dados, podendo ser acessada a qualquer momento.
 
