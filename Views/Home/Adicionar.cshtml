@@ -1,36 +1,38 @@
 ﻿@model Tarefa
 
 <h2>Nova Tarefa</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
 
-<form asp-action="Filtrar" asp-controller="Home" method="post">
+<form asp-action="Adicionar" asp-controller="Home" method="post">
 
 	<div class="mb-3">
-		<label class="form-label">Categoria:</label>
-		<select name="filtro"
-	class="form-select"
-				asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome", ViewBag.Filtros.CategoriaId))">
-			<option value="todos">Todos</option>
+		<label asp-for="Descricao" class="form-label">Descrição</label>
+		<input asp-for="Descricao" class="form-control"/>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="CategoriaId" class="form-label">Categoria:</label>
+		<select asp-for="CategoriaId"
+	            class="form-select"
+				asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome"))">
+			<option value=""></option>
 		</select>
 	</div>
 
 	<div class="mb-3">
-		<label class="form-label">Data de vencimento:</label>
-		<select name="filtro"
-	class="form-select"
-				asp-items="@(new SelectList(ViewBag.VencimentoValores, "Key", "Value", ViewBag.Filtros.Vencimento))">
-			<option value="todos">Todos</option>
-		</select>
+		<label asp-for="DataDeVencimento" class="form-label">Data de Vencimento</label>
+		<input type="text" asp-for="DataDeVencimento" class="form-control" />
 	</div>
+	
 
 	<div class="mb-3">
-		<label class="form-label">Situação:</label>
-		<select name="filtro"
-	class="form-select"
-				asp-items="@(new SelectList(ViewBag.Status, "StatusId", "Nome", ViewBag.Filtros.StatusId))">
-			<option value="todos">Todos</option>
+		<label asp-for="StatusId" class="form-label">Situação:</label>
+		<select asp-for="StatusId"
+	            class="form-select"
+				asp-items="@(new SelectList(ViewBag.Status, "StatusId", "Nome"))">
 		</select>
 	</div>
 
-	<button type="submit" class="btn btn-primary">Filtrar</button>
-	<a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
+	<button type="submit" class="btn btn-primary">Adicionar</button>
+	<a asp-action="Index" class="btn btn-primary">Cancelar</a>
 </form>

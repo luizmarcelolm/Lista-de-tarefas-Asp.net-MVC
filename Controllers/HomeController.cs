@@ -65,12 +65,29 @@ namespace Lista_de_tarefas.Controllers
 
         public IActionResult Adicionar()
         {
-            ViewBag.Categoria = _context.Categorias.ToList();
+            ViewBag.Categorias = _context.Categorias.ToList();
 			ViewBag.Status = _context.Statuses.ToList();
 
             var tarefa = new Tarefa { StatusId = "aberto" };
 
             return View(tarefa);
+		}
+
+        [HttpPost]
+        public IActionResult Adicionar (Tarefa tarefa)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.tarefas.Add(tarefa);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+				ViewBag.Categorias = _context.Categorias.ToList();
+				ViewBag.Status = _context.Statuses.ToList();
+                return View(tarefa);
+			}
 		}
 
         [HttpPost]
@@ -90,6 +107,18 @@ namespace Lista_de_tarefas.Controllers
                 _context.SaveChanges();
             }
             return RedirectToAction("Index", new { ID = id});
+        }
+
+        [HttpPost]
+        public IActionResult DeletarCompletos(string id)
+        {
+            var paraDeletar = _context.tarefas.Where(s => s.StatusId == "completo").ToList();
+            foreach(var tarefa in paraDeletar)
+            {
+                _context.tarefas.Remove(tarefa);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", new {ID = id});
         }
 
 

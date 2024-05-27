@@ -76,7 +76,7 @@
 				</table>
 			</form>
 
-			<form asp-action="DeletarCompletos">
+			<form asp-action="DeletarCompletos" method="post" asp-route-id="@ViewBag.Filtros.FiltroString">
 				<a asp-action="Adicionar" asp-controller="Home" class="btn btn-success"> Adicionar Tarefa</a>
 				<button type="submit" class="btn btn-danger">Deletar Tarefas Completas</button>
 			</form>
