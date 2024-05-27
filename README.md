@@ -18,3 +18,11 @@
 * Nesse trecho de código foi feita uma verificação e alterado a cor na classe conforme seu status.
 # ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/efa12ade-252e-4ac6-9de4-648f33272c1e)
 
+* No botão deletar tarefas completas, exclui todas as atividades que estão verdes.
+# ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/27c2e4f3-e3b0-43fd-874f-aed227f58f8b)
+
+* Na controller foi criado um IActionResult com nome de DeletarCompletos, onde percorre a lista no banco e todas as atividades que estiverem completas são exclidas do banco.
+#![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/92de9027-c726-49b4-8d82-33759a5d7418)
+
+ 
+
