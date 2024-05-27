@@ -28,6 +28,30 @@
 * No botão adicionar tarefa, abre um formulário para ser inserido novas dados.
 * Caso não queira adicionar nova tarefa o botão cancelar retorna a Index. 
 # ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/02b6024d-004e-4328-bc26-fa6ab5ac4612)
+--------------------------------------------
+
+* Do lado esquerdo superior foi colocado 3 select para filtrar as informações que deseja obter do banco de dados.
+* Categoria:
+    - Todos
+    - Academia
+    - casa
+    - Compras
+    - Academia
+    - Trabalho
+* Data de Vencimento
+    - Todos
+    - Futuro
+    - Passado
+    - Hoje
+* Situação
+    - Aberto
+    - Completo
+* Após selecionar as opções no botão filtrar faz a pesquisa.
+* Botão limpar deixa todos como padrão.
+# ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/26670082-c204-4a23-9db7-ca1f967c5b4b)
+----------------------------------------------
+
+
 
 
 
