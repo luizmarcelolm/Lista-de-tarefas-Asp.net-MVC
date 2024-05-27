@@ -23,6 +23,13 @@
 
 * Na controller foi criado um IActionResult com nome de DeletarCompletos, onde percorre a lista no banco e todas as atividades que estiverem completas são exclidas do banco.
 #![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/92de9027-c726-49b4-8d82-33759a5d7418)
+--------------------------------------------
+
+* No botão adicionar tarefa, abre um formulário para ser inserido novas dados.
+* Caso não queira adicionar nova tarefa o botão cancelar retorna a Index. 
+# ![image](https://github.com/luizmarcelolm/Lista-de-tarefas-Asp.net-MVC/assets/109484017/02b6024d-004e-4328-bc26-fa6ab5ac4612)
+
+
 
  
 
