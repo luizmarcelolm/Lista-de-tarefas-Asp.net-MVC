@@ -21,7 +21,7 @@ namespace Lista_de_tarefas.Models
         public Categoria Categoria { get; set; }
 
         [Required(ErrorMessage = "Selecione um status!")]
-        public string StatusId { get; set; }
+		public string StatusId { get; set; }
 
         [ValidateNever]
         public Status Status { get; set; }

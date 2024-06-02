@@ -3,6 +3,8 @@ using Lista_de_tarefas.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Net;
 
 namespace Lista_de_tarefas.Controllers
 {
@@ -121,9 +123,14 @@ namespace Lista_de_tarefas.Controllers
             return RedirectToAction("Index", new {ID = id});
         }
 
+        public IActionResult Menssagem()
+        {
+            Console.WriteLine("enviando menssagem");
+            return View();
+        }
 
-
+      
 
        
-    }
+	}
 }
